@@ -5,6 +5,30 @@
     <title>Create A Boardgame</title>
   </head>
   <body>
-    
+    <h2>Add A New Game</h2>
+    <form class="" action="/create" method="post">
+      <label for="name">Name: </label>
+      <input type="text" name="name" value="">
+      <br>
+      <label for="players">Player Count: </label>
+      <input type="number" name="players" value="" size=2 maxlength=3>
+      <br>
+      <label for="playtime">Play Time (in minutes): </label>
+      <input type="number" name="playtime" value="" size=4>
+      <br>
+      <label for="boxart">Box Art URL: </label>
+      <input type="text" name="boxart" value="">
+      <br>
+      <label for="company">Company</label>
+      <ul name="company">
+        <label for="companyname">Name: </label>
+        <li><input type="text" name="companyname" value=""></li>
+        <label for="designer">Designer: </label>
+        <li><input type="text" name="designer" value=""></li>
+        <label for="location">Location: </label>
+        <li><input type="text" name="location" value=""></li>
+      </ul>
+      <input type="submit" name="" value="Create">
+    </form>
   </body>
 </html>

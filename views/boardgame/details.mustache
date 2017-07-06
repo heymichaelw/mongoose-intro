@@ -8,7 +8,27 @@
   {{#model}}
     <h2>{{name}}</h2>
     <img src={{boxart}}>
-    <h5>{{company.name}}</h5>
+    {{#style}}
+    <h3>{{.}}</h3>
+    {{/style}}
+    <h4>{{company.name}}</h5>
+    <br>
+    <h2>Add A Style</h2>
+    <form class="" action="/details/{{_id}}" method="post">
+      <input type="text" name="style" value="">
+      <input type="submit" name="" value="Add">
+    </form>
+  <form class="" action="/" method="get">
+    <input type="submit" name="" value="Back To Games">
+  </form>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <form class="" action="/delete/{{_id}}" method="get">
+    <input type="submit" name="" value="Delete This Game">
+  </form>
   {{/model}}
   </body>
 </html>

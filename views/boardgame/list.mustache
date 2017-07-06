@@ -5,6 +5,13 @@
     <title>Boardgames</title>
   </head>
   <body>
+    <form class="" action="/create" method="get">
+      <input type="submit" name="" value="Add A Game">
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
     {{#model}}
     <h2><a href="/details/{{_id}}">{{name}}</a></h2>
     <img src="{{boxart}}" alt="">

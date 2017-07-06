@@ -4,7 +4,7 @@ const parseurl = require('parseurl');
 
 module.exports = {
   list: function(req, res){
-    Boardgame.find().then(function(results){
+    Boardgame.find().sort({name: 1}).then(function(results){
         res.render("boardgame/list", {model: results});
     });
   },
@@ -25,5 +25,18 @@ module.exports = {
   },
   createPage: function(req, res){
     res.render("boardgame/create", {});
+  },
+  addstyle: function(req, res){
+    style = req.body.style;
+    Boardgame.findOne({_id: req.params.id}).then(function(result){
+      result.style.push(style);
+      result.save();
+      res.redirect("back");
+    });
+  },
+  delete: function(req, res){
+    Boardgame.deleteOne({_id: req.params.id}).then(function(){
+      res.redirect('/');
+    });
   }
 };

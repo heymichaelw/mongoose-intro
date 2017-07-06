@@ -19,7 +19,9 @@ mongoose.connect('mongodb://localhost:27017/mwmongoosedb');
 
 app.get('/', boardgameController.list);
 app.get('/details/:id', boardgameController.details);
+app.post('/details/:id', boardgameController.addstyle);
 app.get('/create', boardgameController.createPage);
-
+app.post('/create', boardgameController.create);
+app.get('/delete/:id', boardgameController.delete);
 
 app.listen(3000);
