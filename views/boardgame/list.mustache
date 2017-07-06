@@ -6,10 +6,8 @@
   </head>
   <body>
     {{#model}}
-    <h2>{{name}}</h2>
-    <div>
-      <h4>{{company.name}}</h4>
-    </div>
+    <h2><a href="/details/{{_id}}">{{name}}</a></h2>
+    <img src="{{boxart}}" alt="">
     {{/model}}
   </body>
 </html>

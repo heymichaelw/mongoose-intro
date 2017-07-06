@@ -9,7 +9,8 @@ const boardgameSchema = new mongoose.Schema({
     name: { type: String, required: true },
     designer: String,
     location: String
-  }
+  },
+  boxart: String
 });
 
 const Boardgame = mongoose.model('Boardgame', boardgameSchema);
