@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit A Game</title>
+  </head>
+  <body>
+  {{#model}}
+    <form class="" action="/edit/{{_id}}" method="post">
+      <label for="name">Name: </label>
+      <input type="text" name="name" value="{{name}}">
+      <br>
+      <label for="players">Player Count: </label>
+      <input type="number" name="players" value={{playerCount}} size=2 maxlength=3>
+      <br>
+      <label for="playtime">Play Time (in minutes): </label>
+      <input type="number" name="playtime" value={{playTime}} size=4>
+      <br>
+      <label for="boxart">Box Art URL: </label>
+      <input type="text" name="boxart" value="{{boxart}}">
+      <br>
+      <label for="company">Company</label>
+      <ul name="company">
+        <label for="companyname">Name: </label>
+        <li><input type="text" name="companyname" value="{{company.name}}"></li>
+        <label for="designer">Designer: </label>
+        <li><input type="text" name="designer" value="{{company.designer}}"></li>
+        <label for="location">Location: </label>
+        <li><input type="text" name="location" value="{{company.location}}"></li>
+      </ul>
+      <input type="submit" name="" value="Edit">
+    </form>
+  {{/model}}
+  </body>
+</html>

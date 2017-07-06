@@ -38,5 +38,24 @@ module.exports = {
     Boardgame.deleteOne({_id: req.params.id}).then(function(){
       res.redirect('/');
     });
+  },
+  editPage: function(req, res){
+    Boardgame.findOne({_id: req.params.id}).then(function(result){
+      res.render("boardgame/edit", {model: result});
+      console.log(result);
+    });
+  },
+  edit: function(req, res){
+    Boardgame.findOne({_id: req.params.id}).then(function(result){
+      result.name = req.body.name;
+      result.playerCount = req.body.players;
+      result.playTime = req.body.playtime;
+      result.boxart = req.body.boxart;
+      result.company.name = req.body.companyname;
+      result.company.designer = req.body.designer;
+      result.company.location = req.body.location;
+      result.save();
+      res.redirect('/');
+    });
   }
 };

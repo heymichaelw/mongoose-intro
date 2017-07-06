@@ -23,5 +23,7 @@ app.post('/details/:id', boardgameController.addstyle);
 app.get('/create', boardgameController.createPage);
 app.post('/create', boardgameController.create);
 app.get('/delete/:id', boardgameController.delete);
+app.get('/edit/:id', boardgameController.editPage);
+app.post('/edit/:id', boardgameController.edit);
 
 app.listen(3000);
